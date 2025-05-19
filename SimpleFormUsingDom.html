@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   *{
+      margin:0px;
+      padding:0px;
+     }
+	 body{
+	    width:100vw;
+		height:100vh;
+		box-sizing:border-box;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+	  }
+	  #wrapper{
+	      width:100%;
+		  height:100%;
+	   }
+	  #formbtn{
+	      width:200px;
+		  height:100px;
+		  border-radius:5px;
+		  font-size:10px;
+	   }
+</style>
+<script type="text/javascript">
+         function generateform(){
+		     document.getElementById("container").innerHTML="";
+			 let myform=document.createElement("form");
+			 let nameinput=document.createElement("input");
+			 let namelabel=document.createElement("label");
+			 namelabel.innerText="First Name: ";
+			 namelabel.style.fontSize="20px";
+			 nameinput.placeholder="Enter First Name";
+			 
+			 
+			 let linebreak=document.createElement("br");
+			 
+			 nameinput.style.width="200px";
+			 nameinput.style.height="50px";
+			 nameinput.style.border="2px solid black";
+			 nameinput.type="text";
+			 
+			 let lastname=document.createElement("label");
+			 lastname.innerText="Last Name: ";
+			 lastname.style.fontSize="20px";
+			 
+			 
+			 let lastnameinput=document.createElement("input");
+			 lastnameinput.style.width="200px";
+			 lastnameinput.style.height="50px";
+			 lastnameinput.style.border="2px solid black";
+			 lastnameinput.type="text";
+			 lastnameinput.placeholder="Enter last name";
+			 
+			 myform.appendChild(namelabel);
+			 myform.appendChild(linebreak);
+			 myform.appendChild(nameinput);
+			 linebreak=document.createElement("br");
+			 myform.appendChild(linebreak);
+			
+			 linebreak=document.createElement("br");
+			 myform.appendChild(lastname);
+			 myform.appendChild(linebreak);
+			 myform.appendChild(lastnameinput);
+			 linebreak=document.createElement("br");
+			 myform.appendChild(linebreak);
+			 
+			 let emailabel=document.createElement("label");
+			 emailabel.innerText="Email: ";
+			 emailabel.style.fontSize="20px";
+			 linebreak=document.createElement("br");
+			 
+			 
+			 let emaillabelinput=document.createElement("input");
+			 emaillabelinput.style.width="200px";
+			 emaillabelinput.style.height="50px";
+			 emaillabelinput.style.border="2px solid black";
+			 emaillabelinput.type="text";
+			 emaillabelinput.placeholder="Enter Email";
+			 
+			 myform.appendChild(emailabel);
+			 myform.appendChild(linebreak);
+			 myform.appendChild(emaillabelinput);
+			 linebreak=document.createElement("br");
+			 myform.appendChild(linebreak);
+			 
+			 let submitbutton=document.createElement("button");
+			 submitbutton.innerText="Submit";
+			 submitbutton.style.width="200px";
+			 submitbutton.style.height="40px";
+			 linebreak=document.createElement("br");
+			 myform.appendChild(linebreak);
+			 myform.appendChild(submitbutton);
+			  
+			  
+			 nameinput.required=true;
+			 lastnameinput.required=true;
+			 emaillabelinput.required=true;
+			 
+			 submitbutton.type="submit";
+			 myform.onsubmit=function(e){
+			     e.preventDefault();
+			     alert("Form Submitted!\n"+"\n"+
+				 "Details of your form"+"\n"+
+				 "First Name: "+nameinput.value+"\n"+
+				 "Last Name: "+lastnameinput.value+"\n"+
+				 "Email:  "+emaillabelinput.value
+				 );
+				 
+			  };
+			 
+			 container.appendChild(myform);
+			 
+			 
+			 }
+</script>
+
+</head>
+<body>
+
+    
+    <input type="button" id="formbtn" value="click on me to generate the form." 
+	onclick="generateform()">
+    <br><br>
+    <div id="container">
+	</div>
+
+</body>
+</html>
