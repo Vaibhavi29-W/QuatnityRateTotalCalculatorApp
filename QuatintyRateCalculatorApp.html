@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+*{
+  margin:0px;
+  padding:0px;
+  overflow:hidden auto;
+ }
+ body{
+   height:100vh;
+   width:100vw;
+   box-sizing:border-box;
+  }
+  html{
+     font-size:10px;
+   }
+  .wrapper{
+	 height:100%;
+     width:100%;
+     display:flex;
+     justify-content:center;
+     align-items:center;	 
+	 }
+	 .container1{
+	    width:50%;
+		height:55rem;
+		border:2px solid black;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		flex-direction:column;
+		background-color:yellow;
+	  }
+	 input{
+	   width:40%;
+	   height:5rem;
+	   border:2px solid black;
+	  }
+	  label{
+	    font-size:3rem;
+	  }
+	  button{
+	     width:20%;
+		 height:5rem;
+		 border-radius:5rem;
+	   }
+</style>
+<script type="text/javaScript">
+          var quantity,rate,total;
+          function calculatetotal(){
+		      quantity=parseInt(document.getElementById("qty").value);
+		      rate=parseInt(document.getElementById("rate").value);
+		      total=quantity*rate;
+			  document.getElementById("tot").value=total;
+		   }
+</script>
+
+</head>
+<body>
+  <div class="wrapper">
+  <div class="container1">
+  <label>Enter Quantity </label><br>
+  <input type='text' name='f' id='qty' placeholder='Enter quantity'>
+  <br><br>
+  <label>Enter Rate </label><br>
+  <input type='text' name='f' id='rate' placeholder='Enter rate'>
+  <br><br>
+  <label>Total: </label><br>
+  <input type='text' name='f' id='tot' placeholder='show Total' readonly><br>
+  <button onclick="calculatetotal()">Calculate</button>
+  </div>
+  </div>
+
+</body>
+</html>
